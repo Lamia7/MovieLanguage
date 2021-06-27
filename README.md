@@ -37,6 +37,7 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 
 ***FRONT***
 - HTML5, CSS3
+- Bootstrap 5
 
 ### Author 📝
 [Lamia EL RALIMI](https://github.com/Lamia7)
