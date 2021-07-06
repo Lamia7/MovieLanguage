@@ -25,8 +25,17 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 ### Features 📋
 + 
 
+### Checklist 📝
+- [x] Download postgreSQL, added django + psycopg2-binary + libpq-dev
+- [x] Initialize django project
+- [x] Modify default settings
+- [x] Create templates folder for templates organization
+- [x] Create base.html template
+- [x] Create the quizz app
+- [x] Create home.html template
+- [ ] 
 ### Tests 🧪
-- ...
+- 
 ### Ressources used to create this program 🔧
 ***BACK***
 - Language : Python 3.9
