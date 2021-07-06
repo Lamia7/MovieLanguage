@@ -1,0 +1,18 @@
+[run]
+omit =
+    # omit anything in a .local directory anywhere
+    */tests/*
+    */migrations/*
+
+    # omit all files called this way anywhere
+    */admin.py
+    */apps.py
+    */urls.py
+    */__init__.py
+    
+    # omit these files
+    manage.py
+    movielanguage/asgi.py
+    movielanguage/wsgi.py
+    movielanguage/settings.py
+    
