@@ -35,6 +35,9 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 - [x] Create home.html template
 - [ ] 
 ### Tests 🧪
+- Launches the unit tests : `coverage run --source='.' manage.py test`
+- Display the coverage report : `coverage report`
+- Display the html coverage report details : `coverage html`
 - 
 ### Ressources used to create this program 🔧
 ***BACK***

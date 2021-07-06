@@ -8,6 +8,7 @@ Django = "==3.2.4"
 python-dotenv = "*"
 psycopg2-binary = "*"
 flake8 = "*"
+coverage = "*"
 
 [dev-packages]
 
