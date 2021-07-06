@@ -10845,7 +10845,7 @@ html {
 }
 
 .content-section-heading h2, .content-section-heading .h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 .content-section-heading h3, .content-section-heading .h3 {
   font-size: 1rem;
@@ -11023,10 +11023,11 @@ footer.footer .social-link:hover {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/bg-masthead.jpg");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/bg_masthead.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: #fff;
 }
 .masthead h1, .masthead .h1 {
   font-size: 4rem;

@@ -131,7 +131,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 # Url for statics
 STATIC_URL = "/static/"
-# Dictionary of static directories where to find directories
+# Dictionary of static directories where to find directories outside of apps
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
