@@ -10966,6 +10966,10 @@ html {
   padding: 1.25rem 2.5rem;
 }
 
+section#users-header {
+  padding: 2rem 0rem;
+}
+
 .callout {
   padding: 15rem 0;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/bg-callout.jpg");
