@@ -11,4 +11,18 @@
     </div>
   </div>
 </section>
+
+<!-- Register -->
+<section class="page-section bg-light" id="register">
+  <div class="container">
+    <form method="POST">
+      {% csrf_token %}
+      <!-- protects form, needed to work -->
+      {% comment %} <fieldset class="form-group">{{ form|crispy }}</fieldset> {% endcomment %}
+      <fieldset class="form-group">{{ form }}</fieldset>
+
+      <button type="submit" class="btn btn-primary">S'inscrire</button>
+    </form>
+  </div>
+</section>
 {% endblock content %}
