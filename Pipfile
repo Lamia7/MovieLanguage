@@ -6,9 +6,10 @@ name = "pypi"
 [packages]
 Django = "==3.2.4"
 python-dotenv = "*"
-psycopg2-binary = "*"
 flake8 = "*"
 coverage = "*"
+crispy-bootstrap5 = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 

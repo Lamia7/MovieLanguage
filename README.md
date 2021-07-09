@@ -32,13 +32,17 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 - [x] Create templates folder for templates organization
 - [x] Create base.html template
 - [x] Create the quizz app
-- [x] Create home.html template
-- [ ] 
+- [x] Create home.html template and view + test
+- [x] Create users app
+- [x] Create register.html template and view
+
+
 ### Tests 🧪
 - Launches the unit tests : `coverage run --source='.' manage.py test`
 - Display the coverage report : `coverage report`
 - Display the html coverage report details : `coverage html`
-- 
+
+
 ### Ressources used to create this program 🔧
 ***BACK***
 - Language : Python 3.9
@@ -50,6 +54,7 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 ***FRONT***
 - HTML5, CSS3
 - Bootstrap 5
+- Bootstrap5 template pack for django-crispy-forms library
 
 ### Author 📝
 [Lamia EL RALIMI](https://github.com/Lamia7)
