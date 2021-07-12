@@ -34,7 +34,7 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 - [x] Create the quizz app
 - [x] Create home.html template and view + test
 - [x] Create users app
-- [x] Create register.html template and view
+- [x] Create register.html template and view + test
 
 
 ### Tests 🧪

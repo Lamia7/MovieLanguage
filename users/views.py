@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages
 
 from .forms import UserRegisterForm
 
@@ -19,14 +18,11 @@ def register(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get("username")
-            messages.success(
-                request,
-                f"Votre compte a été créé avec succès.\n"
-                f"Vous pouvez vous connecter sur le compte : {username}.",
-            )
 
             return redirect("quizz:home")
+        # If unvalid, empty form
+        else:
+            form = UserRegisterForm()
     else:
         form = UserRegisterForm()
     # form as a context to be used in template
