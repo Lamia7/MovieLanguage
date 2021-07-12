@@ -51,4 +51,6 @@ jobs:
         run: python -Wa manage.py test --noinput -v 2
 
       - name: Display coverage report
-        run: coverage report
+        run: |
+          coverage run --source='.' manage.py test
+          coverage report
