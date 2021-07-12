@@ -12,4 +12,5 @@ urlpatterns = [
             template_name="users/login.html"),
         name="login"
     ),
+    path("account/", views.account, name="account"),
 ]
