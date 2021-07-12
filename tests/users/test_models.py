@@ -27,3 +27,12 @@ class ModelsTestCase(TestCase):
             password="userpassword1",
         )
         self.assertIs(user.is_admin, False)
+
+    def test_create_user_missing_email(self):
+        message = "Users must have an email address"
+        with self.assertRaisesMessage(ValueError, message):
+            User.objects.create_user(
+                email=None,
+                username="User1",
+                password="userpassword1",
+            )
