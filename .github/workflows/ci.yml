@@ -3,7 +3,7 @@
 
 name: Continious Integration for MovieLanguage application
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -47,5 +47,8 @@ jobs:
           # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-      - name: Lanuch tests
+      - name: Launch tests
         run: python -Wa manage.py test --noinput -v 2
+
+      - name: Display coverage report
+        run: coverage report
