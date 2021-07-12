@@ -30,7 +30,7 @@ class TestUsersViews(TestCase):
 
         response = self.client.post(self.register_url, data)
         self.assertEqual(User.objects.count(), 1)
-        self.assertRedirects(response, reverse("quizz:home"))
+        self.assertRedirects(response, reverse("users:login"))
         self.assertEqual(response.status_code, 302)
 
     def test_registration_failed(self):
