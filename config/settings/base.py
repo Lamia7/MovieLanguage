@@ -122,3 +122,11 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+LOGIN_REDIRECT_URL = 'users:account'
+
+"""when user tries to go to a page only available to logged in users,
+redirects to the login page, then to the page they tried to access to
+(@decorators in views)"""
+LOGIN_URL = 'users:login'
