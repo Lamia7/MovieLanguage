@@ -38,7 +38,7 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 - [x] Test users models
 - [x] Create login.html template with Django CBV
 - [x] Create account.html template + view + test
-- [ ] Create logout.html template with Django CBV
+- [x] Create logout.html template with Django CBV
 
 
 ### Tests 🧪
