@@ -40,10 +40,16 @@
         <li class="sidebar-brand">
           <a href="#page-top">Movie Language</a>
         </li>
-        <li class="sidebar-nav-item"><a href="#page-top">Accueil</a></li>
-        <li class="sidebar-nav-item"><a href="#about">À propos</a></li>
-        <li class="sidebar-nav-item"><a href="#services">Objectifs</a></li>
-        <li class="sidebar-nav-item"><a href="#footer">Contact</a></li>
+        <li class="sidebar-nav-item"><a href="{% url 'quizz:home' %}#page-top">Accueil</a></li>
+        <li class="sidebar-nav-item"><a href="{% url 'quizz:home' %}#about">À propos</a></li>
+        <li class="sidebar-nav-item"><a href="{% url 'quizz:home' %}#services">Objectifs</a></li>
+        <li class="sidebar-nav-item"><a href="{% url 'quizz:home' %}#footer">Contact</a></li>
+        {% if user.is_authenticated %}
+          <li class="sidebar-nav-item"><a href="{% url 'users:account' %}">Mon compte</a></li>
+          <li class="sidebar-nav-item"><a href="{% url 'users:logout' %}">Se déconnecter</a></li>
+        {% else %}
+          <li class="sidebar-nav-item"><a href="{% url 'users:login' %}">Se connecter</a></li>
+        {% endif %}
       </ul>
     </nav>
     {% endblock nav %}
