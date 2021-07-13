@@ -22,7 +22,11 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("password", models.CharField(max_length=128, verbose_name="password")),
+                ("password", models.CharField(
+                    max_length=128,
+                    verbose_name="password"
+                )
+                ),
                 (
                     "last_login",
                     models.DateTimeField(
@@ -30,7 +34,11 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("email", models.EmailField(max_length=255, unique=True)),
-                ("username", models.CharField(default="utilisateur", max_length=60)),
+                ("username", models.CharField(
+                    default="utilisateur",
+                    max_length=60
+                )
+                ),
                 ("is_active", models.BooleanField(default=True)),
                 ("is_admin", models.BooleanField(default=False)),
             ],
