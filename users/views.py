@@ -1,43 +1,26 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.views.generic import View, TemplateView
 
 from .forms import UserRegisterForm
 
 
-# Create your views here.
-def register(request):
-    """Displays the registration page
+class RegisterView(View):
+    """Displays the register page using the Class Based View: View"""
+    form = UserRegisterForm()
 
-    Args:
-        request (obj): Django object to generate response
+    def get(self, request, *args, **kwargs):
+        return render(request, "users/register.html", {"form": self.form})
 
-    Returns:
-        str: Template file
-    """
-
-    if request.method == "POST":
-        form = UserRegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-
-            return redirect("users:login")
-        # If unvalid, empty form
-        else:
-            form = UserRegisterForm()
-    else:
-        form = UserRegisterForm()
-    # form as a context to be used in template
-    return render(request, "users/register.html", {"form": form})
+    def post(self, request, *args, **kwargs):
+        if self.form.is_valid():
+            self.form.save()
+        return redirect("users:login")
 
 
-@login_required  # only allows this page to logged_in users
-def account(request):
+@method_decorator(login_required, name='dispatch')
+class AccountView(TemplateView):
     """Displays the account page when a user is logged in
-
-    Args:
-        request (obj): Django object to generate response
-
-    Returns:
-        str: Template file
-    """
-    return render(request, "users/account.html")
+    using the CBV: TemplateView """
+    template_name = 'users/account.html'
