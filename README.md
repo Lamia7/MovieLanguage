@@ -39,6 +39,7 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 - [x] Create login.html template with Django CBV
 - [x] Create account.html template + view + test
 - [x] Create logout.html template with Django CBV
+- [x] Create quizz_list.html template + view + test
 
 
 ### Tests 🧪
@@ -59,6 +60,7 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 - HTML5, CSS3
 - Bootstrap 5
 - Bootstrap5 template pack for django-crispy-forms library
+- Pillow library for images
 
 ### Author 📝
 [Lamia EL RALIMI](https://github.com/Lamia7)
