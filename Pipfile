@@ -10,6 +10,7 @@ flake8 = "*"
 coverage = "*"
 crispy-bootstrap5 = "*"
 psycopg2-binary = "*"
+pillow = "*"
 
 [dev-packages]
 
