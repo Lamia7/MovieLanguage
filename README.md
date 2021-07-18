@@ -40,6 +40,7 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 - [x] Create account.html template + view + test
 - [x] Create logout.html template with Django CBV
 - [x] Create quizz_list.html template + view + test
+- [x] Create quizz models + test
 
 
 ### Tests 🧪
