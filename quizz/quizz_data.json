@@ -1,0 +1,224 @@
+{
+    "quizzes": [
+        {
+            "title": "a",
+            "movie": "",
+            "image": "",
+            "question_quantity": "",
+            "required_score_to_pass": "",
+            "language": "english",
+            "questions": [
+                {
+                    "question": "question",
+                    "answers": [
+                        {
+                            "A": ""
+                        },
+                        {
+                            "B": ""
+                        },
+                        {
+                            "C": ""
+                        },
+                        {
+                            "D": ""
+                        }
+                    ],
+                    "solution": "A"
+                }
+            ]
+        },
+        {
+            "title": "Interstellar",
+            "movie": "Interstellar",
+            "image": "",
+            "question_quantity": "",
+            "required_score_to_pass": "",
+            "language": "english",
+            "questions": [
+                {
+                    "question": "Which ship does the Cooper's crew uses to travel to Saturn ?",
+                    "answers": [
+                        {
+                            "A": "Odyssea"
+                        },
+                        {
+                            "B": "Endurance"
+                        },
+                        {
+                            "C": "Nautilus"
+                        },
+                        {
+                            "D": "Explorer"
+                        }
+                    ],
+                    "solution": "B"
+                },
+                {
+                    "question": "One hour spent on Miller's planet is equal to how many years on Earth ?",
+                    "answers": [
+                        {
+                            "A": "1"
+                        },
+                        {
+                            "B": "5"
+                        },
+                        {
+                            "C": "7"
+                        },
+                        {
+                            "D": "10"
+                        }
+                    ],
+                    "solution": "C"
+                },
+                {
+                    "question": "What object does Cooper use to transmit quantum informations from the black hole to his daughter Murphy ?",
+                    "answers": [
+                        {
+                            "A": "A computer"
+                        },
+                        {
+                            "B": "A light"
+                        },
+                        {
+                            "C": "A radar"
+                        },
+                        {
+                            "D": "A watch"
+                        }
+                    ],
+                    "solution": "D"
+                }
+            ]
+        },
+        {
+            "title": "Harry Potter I",
+            "movie": "Harry Potter I - Harry Potter and the Philosopher's Stone",
+            "image": "",
+            "question_quantity": "",
+            "required_score_to_pass": "",
+            "language": "english",
+            "questions": [
+                {
+                    "question": "Where is located Harry's bedroom in the Dursleys' house ?",
+                    "answers": [
+                        {
+                            "A": "In the basement"
+                        },
+                        {
+                            "B": "Under the stairs"
+                        },
+                        {
+                            "C": "In the garage"
+                        },
+                        {
+                            "D": "In the yard"
+                        }
+                    ],
+                    "solution": "B"
+                },
+                {
+                    "question": "What speciality does professor Firenze teach ?",
+                    "answers": [
+                        {
+                            "A": "Divination"
+                        },
+                        {
+                            "B": "Flying"
+                        },
+                        {
+                            "C": "Herbology"
+                        },
+                        {
+                            "D": "Potions"
+                        }
+                    ],
+                    "solution": "A"
+                },
+                {
+                    "question": "How many presents does Dudley Dursleys recieve for his birthday ?",
+                    "answers": [
+                        {
+                            "A": "36"
+                        },
+                        {
+                            "B": "25"
+                        },
+                        {
+                            "C": "10"
+                        },
+                        {
+                            "D": "3"
+                        }
+                    ],
+                    "solution": "A"
+                }
+            ]
+        },
+        {
+            "title": "The Lord of the Rings I",
+            "movie": "The Lord of the Rings : The Fellowship of the Ring",
+            "image": "",
+            "question_quantity": "",
+            "required_score_to_pass": "",
+            "language": "english",
+            "questions": [
+                {
+                    "question": "Where does Freudon live ?",
+                    "answers": [
+                        {
+                            "A": "Hobbit's land"
+                        },
+                        {
+                            "B": "Rivendell"
+                        },
+                        {
+                            "C": "The Shire"
+                        },
+                        {
+                            "D": "Moria"
+                        }
+                    ],
+                    "solution": "C"
+                },
+                {
+                    "question": "How many Rings of Power are there in total ?",
+                    "answers": [
+                        {
+                            "A": "9"
+                        },
+                        {
+                            "B": "10"
+                        },
+                        {
+                            "C": "25"
+                        },
+                        {
+                            "D": "20"
+                        }
+                    ],
+                    "solution": "D"
+                },
+                {
+                    "question": "How many members of the Fellowship of the Ring are there ?",
+                    "answers": [
+                        {
+                            "A": "7"
+                        },
+                        {
+                            "B": "9"
+                        },
+                        {
+                            "C": "10"
+                        },
+                        {
+                            "D": "15"
+                        }
+                    ],
+                    "solution": "B"
+                }
+            ]
+        }
+    ]
+}
