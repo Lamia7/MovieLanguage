@@ -41,6 +41,7 @@ class Quizz(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     required_score_to_pass = models.IntegerField(
         help_text="Score minimum attendu (%)",
+        default=50,
         verbose_name=_("score minimum")
     )
     language = models.ForeignKey(
