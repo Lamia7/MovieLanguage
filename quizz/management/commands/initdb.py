@@ -39,12 +39,38 @@ class Command(BaseCommand):
             )
             # print(f"QUIZZ: {quizz_obj}, LANG: {quizz_obj.language}, MOV: {quizz_obj.movie}")  # noqa E501
             # print("----------")
-            
+
             # Saves quizz object
             try:
                 quizz_obj.save()
             except ValueError as e:
                 print("Error, unable to save quizz: ", e)
-            except IntegrityError as e:  # Avoid duplicates
-                print("Error, unable to save quizz: ", e)
+            except IntegrityError:  # Avoid duplicates
+                # print("Error, unable to save quizz: ", e)
+                quizz_obj = Quizz.objects.get(title=title)
+            # dm.save_questions(quizz['questions'])
+            # contient question, rép, solution
+            for question_item in quizz['questions']:
+                question_obj = dm.save_question(question_item['question'], quizz_obj)
+                print(f"question obj: {question_obj}")
+                # print(f"TYPE: {type(question['answers'])} - ANSWERS {question['answers']}")
+
+                # save answer
+                solution = question_item['solution']
+                # pr chq dict réponse dans la liste de réponses
+                for answer in question_item['answers']:
+                    # pr chq clé de chq dict de réponse
+                    for key in answer.keys():
+                        # print(f"ANSWERS {answer[key]}")
+                        # si la clé dans le dict de réponse et = à solution
+                        if key == solution:
+                            is_solution = True
+                            # print(f"c'est la bonne réponse: {key}")
+                        else:
+                            is_solution = False
+                        # enregistrer réponse
+                        answer_obj = dm.save_answers(answer[key], question_obj, is_solution)
+                        # answer_obj = dm.save_answers(question_item, question_obj)
+            print(f"answer_obj: {answer_obj}")
+            print("--------------------")
             continue
