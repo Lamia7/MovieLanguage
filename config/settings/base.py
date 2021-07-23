@@ -114,6 +114,10 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+# Media files (images)
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
 # Pack for Django Crispy Forms library
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
