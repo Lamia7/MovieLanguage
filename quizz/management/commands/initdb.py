@@ -10,8 +10,6 @@ from quizz.data import DataManager
 class Command(BaseCommand):
     help = 'Initialize database with quizzes'
 
-    # METHODE save_quizz(self, data)
-
     def handle(self, *args, **kwargs):
         """Initialize database with quizzes from JSON file"""
 
@@ -23,47 +21,30 @@ class Command(BaseCommand):
 
         # Loop into quizzes
         for quizz in data['quizzes']:
-            # transforme le titre en upper case
             title = quizz['title'].upper()
-            # print(title)
-            # transforme movie en upper case
             movie_obj = Movie(title=quizz['movie'].upper())
-            # print(movie_obj)
-            dm.save_movie(movie_obj)
-            # try:
-            #     movie_obj.save()
-            # except IntegrityError:
-            #     movie_obj = Movie.objects.get(title=movie_obj)
-            # capitalize language
+            movie_obj = dm.save_movie(movie_obj)
+
             language_obj = Language(name=quizz['language'].capitalize())
-            # print(language_obj)
             language_obj = dm.save_language(language_obj)
-            # try:
-            #     language_obj.save()
-            # except IntegrityError:
-            #     language_obj = Language.objects.get(name=language_obj)
-            # quizz['language'].capitalize()
-            # compte nombre de questions
+
             question_qty = len(quizz['questions'])
-            # print(question_qty)
-            print("----------")
-            # instancier un objet quizz
+
+            # Instanciate quizz object
             quizz_obj = Quizz(
                 title=title,
                 movie=movie_obj,
                 language=language_obj,
                 question_quantity=question_qty
             )
-            print(f"QUIZZ: {quizz_obj}, LANG: {quizz_obj.language}, MOV: {quizz_obj.movie}")  # noqa E501
-            print("----------")
-            # essaie de l'enregistrer
+            # print(f"QUIZZ: {quizz_obj}, LANG: {quizz_obj.language}, MOV: {quizz_obj.movie}")  # noqa E501
+            # print("----------")
+            
+            # Saves quizz object
             try:
                 quizz_obj.save()
             except ValueError as e:
                 print("Error, unable to save quizz: ", e)
-            except IntegrityError as e:
+            except IntegrityError as e:  # Avoid duplicates
                 print("Error, unable to save quizz: ", e)
-                # enregistre language, linking them to Quizz obj
-                # except IntegrityError:  Avoid duplicated language
-                # récupérer quizz_obj = Language.objects.get(name=language)
             continue
