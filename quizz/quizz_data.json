@@ -1,34 +1,6 @@
 {
     "quizzes": [
         {
-            "title": "a",
-            "movie": "",
-            "image": "",
-            "question_quantity": "",
-            "required_score_to_pass": "",
-            "language": "english",
-            "questions": [
-                {
-                    "question": "question",
-                    "answers": [
-                        {
-                            "A": ""
-                        },
-                        {
-                            "B": ""
-                        },
-                        {
-                            "C": ""
-                        },
-                        {
-                            "D": ""
-                        }
-                    ],
-                    "solution": "A"
-                }
-            ]
-        },
-        {
             "title": "Interstellar",
             "movie": "Interstellar",
             "image": "",

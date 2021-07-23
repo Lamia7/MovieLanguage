@@ -18,8 +18,8 @@ class DataTestCase(TestCase):
 
     def test_save_movie_failed(self):
         dm = DataManager()
-        #movie_mock = Movie.objects.create(title="CAPTAIN FANTASTIC")
-        #dm.save_movie(movie_mock)
+        # movie_mock = Movie.objects.create(title="CAPTAIN FANTASTIC")
+        # dm.save_movie(movie_mock)
         dm.save_movie(self.movie_mock)
         if IntegrityError:
             movie_get = Movie.objects.get(title="CAPTAIN FANTASTIC")
@@ -27,7 +27,8 @@ class DataTestCase(TestCase):
 
     def test_save_language_success(self):
         dm = DataManager()
-        self.assertEqual(dm.save_language(self.language_mock), self.language_mock)
+        self.assertEqual(
+            dm.save_language(self.language_mock), self.language_mock)
 
     def test_save_language_failed(self):
         pass
