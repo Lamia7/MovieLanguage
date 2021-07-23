@@ -34,7 +34,7 @@ class Quizz(models.Model):
         null=True,
         related_name="quizz"
     )
-    image = models.ImageField(blank=True)
+    image = models.ImageField(default="movie.jpg", upload_to='movies')
     question_quantity = models.IntegerField(
         verbose_name=_("Nombre de questions")
     )
