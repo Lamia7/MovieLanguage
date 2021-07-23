@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.db.utils import IntegrityError
 
-from quizz.models import Language, Movie
+from quizz.models import Language, Movie, Quizz, Question
 from quizz.data import DataManager
 
 
@@ -11,6 +11,15 @@ class DataTestCase(TestCase):
     def setUp(self):
         self.movie_mock = Movie.objects.create(title="CAPTAIN FANTASTIC")
         self.language_mock = Language.objects.create(name="Spanish")
+        self.quizz_mock = Quizz.objects.create(
+            title="CAPTAIN FANTASTIC",
+            movie=self.movie_mock,
+            language=self.language_mock,
+            question_quantity=3
+        )
+        self.question_mock = Question.objects.create(
+            question_content="Quand ?",
+            quizz=self.quizz_mock)
 
     def test_save_movie_success(self):
         dm = DataManager()
@@ -32,3 +41,10 @@ class DataTestCase(TestCase):
 
     def test_save_language_failed(self):
         pass
+
+    def test_save_question_success(self):
+        dm = DataManager()
+        self.assertEqual(
+            dm.save_question("Quand ?", self.quizz_mock),
+            self.question_mock
+        )
