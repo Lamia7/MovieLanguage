@@ -20,6 +20,8 @@ class QuizzListView(ListView):
     """CBV that displays the quizz_list page"""
     model = Quizz
     template_name = "quizz/quizz_list.html"
+    context_object_name = "quizz_list"
+    # paginate_by = 9
 
 
 class QuizzDetailView(DetailView):
