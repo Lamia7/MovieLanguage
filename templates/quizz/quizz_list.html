@@ -18,8 +18,8 @@
 <section class="page-section bg-light" id="quizz_list">
   <div class="container">
     <div class="row">
-      {% if object_list %}
-      {% for quizz in object_list %}
+      {% if quizz_list %}
+      {% for quizz in quizz_list %}
       <div class="col-lg-4 col-md-12">
         <div class="card mx-1 my-3 shadow p-3 mb-5 bg-white rounded">
           <img
@@ -29,7 +29,7 @@
           />
 
           <div class="card-body text-center">
-            {% comment %} <a href="{% url 'quizz:quizz' quizz.id %}" target="_blank"> {% endcomment %}
+            <a href="{% url 'quizz:quizz' quizz.pk %}" target="_blank">
               <p class="card-title">{{ quizz.title }}</p>
             </a>
           </div>
