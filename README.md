@@ -41,6 +41,8 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 - [x] Create logout.html template with Django CBV
 - [x] Create quizz_list.html template + view + test
 - [x] Create quizz models + test
+- [x] Create quizz_list view (CBV ListView) + template
+- [ ] Create quizz view (CBV DetailView) + template
 
 
 ### Tests 🧪
