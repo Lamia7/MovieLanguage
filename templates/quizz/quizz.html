@@ -17,13 +17,23 @@
         <div class="col-lg-12 col-md-12">
           <div class="card mx-1 my-3 shadow p-3 mb-5 bg-white rounded">
             <div class="card-body text-center">
-              <h2 class="text font-weight-bold">Quizz: {{ quizz.title }}</h2>
-              {% comment %} {% if quizz %} {% endcomment %}
-                {% comment %} {% for question in quizz_list %} {% endcomment %}
+              <h2 class="text font-weight-bold">Répondez aux questions :</h2>
+              {% if questions %}
+                {% for question in questions %}
               <ul class="list-unstyled">
-                <li>Question :</li>
-                <li>Réponses :</li>
+
+                <li>Question : {{ question.question_content }}</li>
+                {% for answer in question.answers.all %}
+                <ul class="list-unstyled">
+                  <li>
+                    <input type="radio" class="form-check-input" value="{{ answer }}" for="{{ answer }}">
+                    <label>Réponses : {{ answer.answer_content }}</label>
+                  </li>
+                {% endfor %}
               </ul>
+              {% endfor %}
+              {% else %} <p>pas de question</p>
+              {% endif %}
             </div>
           </div>
         </div>

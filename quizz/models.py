@@ -58,6 +58,7 @@ class Quizz(models.Model):
     def __str__(self):
         return self.title
 
+    # TODO: delete as we use related_name
     def get_questions(self):
         return self.questions.all()
 
@@ -76,6 +77,7 @@ class Question(models.Model):
     def __str__(self):
         return self.question_content
 
+    # TODO: delete as we use related_name
     def get_answer(self):
         return self.answers.all()
 
