@@ -1,4 +1,4 @@
-from quizz.models import Quizz
+from quizz.models import Question, Quizz
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
@@ -31,8 +31,7 @@ class QuizzDetailView(DetailView):
     template_name = "quizz/quizz.html"
     context_object_name = "quizz"
 
-
-"""def quizz_view(request, pk):
-    quizz = Quizz.objects.get(pk=pk)
-
-    return render(request, 'quizz/quizz.html', {'obj': quizz})"""
+    def get_context_data(self, **kwargs):
+        context = super(QuizzDetailView, self).get_context_data(**kwargs)
+        context['questions'] = Question.objects.filter(quizz=self.kwargs['pk'])
+        return context
