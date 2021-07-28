@@ -11,41 +11,47 @@
   </div>
 </section>
 
-  <section class="page-section bg-light" id="quizz">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12">
-          <div class="card mx-1 my-3 shadow p-3 mb-5 bg-white rounded">
-            <div class="card-body text-center">
-              <h2 class="text font-weight-bold">Répondez aux questions :</h2>
-              {% if questions %}
-                {% for question in questions %}
+<section class="page-section bg-light" id="quizz">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="card mx-1 my-3 shadow p-3 mb-5 bg-white rounded">
+          <div class="card-body">
+            <h2 class="text font-weight-bold">Répondez aux questions :</h2>
+            {% if questions %}
+              <form>
+              {% for question in questions %}
               <ul class="list-unstyled">
-
-                <li>Question : {{ question.question_content }}</li>
-                {% for answer in question.answers.all %}
-                <ul class="list-unstyled">
-                  <li>
-                    <input type="radio" class="form-check-input" value="{{ answer }}" for="{{ answer }}">
-                    <label>Réponses : {{ answer.answer_content }}</label>
-                  </li>
-                {% endfor %}
+                <li>
+                    <p>{{ question.question_content }}</p>
+                    {% for answer in question.answers.all %}
+                    <ul class="list-unstyled">
+                      <li>
+                        <input type="radio" class="form-check-input" name="answer-{{ question.pk }}" value="{{ answer }}" for="{{ answer }}">
+                        <label> {{ answer.answer_content }}</label>
+                      </li>
+                    </ul>
+                    {% endfor %}
+                </li>
               </ul>
+              <hr>
               {% endfor %}
-              {% else %} <p>pas de question</p>
-              {% endif %}
-            </div>
+              <div>
+                <button class="btn btn-primary" type="submit">Soumettre</button>
+              </div>
+              </form>
+            {% else %} <p>Oups, il semblerait que les questions soient en vacances. Reviens plus tard pour t'amuser.</p>
+            {% endif %}
           </div>
         </div>
-    </div>
-        <div class="container h-100">
-      <div
-        class="row h-100 align-items-center justify-content-center text-center"
-      >
-        <div class="col-lg-10 align-self-end">
-          <h2 class="text-white font-weight-bold">{{ quizz.name }}</h2>
-        </div>
+      </div>
+  </div>
+  <div class="container h-100">
+    <div class="row h-100 align-items-center justify-content-center text-center">
+      <div class="col-lg-10 align-self-end">
+        <h2 class="text-white font-weight-bold">{{ quizz.name }}</h2>
       </div>
     </div>
-  </section>
-  {% endblock content %}
+  </div>
+</section>
+{% endblock content %}
