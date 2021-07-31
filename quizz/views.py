@@ -1,19 +1,11 @@
 from quizz.models import Question, Quizz
-from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+# from django.shortcuts import render
+from django.views.generic import TemplateView, ListView, DetailView
 
 
-# Create your views here.
-def home(request):
-    """Displays the home page
-
-    Args:
-        request (obj): Django object to generate response
-
-    Returns:
-        str: Template file
-    """
-    return render(request, "quizz/home.html")
+class HomeView(TemplateView):
+    """CBV that displays the home page"""
+    template_name = "quizz/home.html"
 
 
 class QuizzListView(ListView):
