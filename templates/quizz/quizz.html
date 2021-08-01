@@ -19,7 +19,8 @@
           <div class="card-body">
             <h2 class="text font-weight-bold">Répondez aux questions :</h2>
             {% if questions %}
-              <form>
+              <form id="quizz-form" action="{% url 'quizz:result' quizz.pk %}" method="POST">
+              {% csrf_token %}
               {% for question in questions %}
               <ul class="list-unstyled">
                 <li>
@@ -27,8 +28,8 @@
                     {% for answer in question.answers.all %}
                     <ul class="list-unstyled">
                       <li>
-                        <input type="radio" class="form-check-input" name="answer-{{ question.pk }}" value="{{ answer }}" for="{{ answer }}">
-                        <label> {{ answer.answer_content }}</label>
+                        <input type="radio" class="form-check-input" name="answer-{{ question.pk }}" value="{{ answer }}">
+                        <label for="answer-{{ question.pk }}"> {{ answer.answer_content }}</label>
                       </li>
                     </ul>
                     {% endfor %}
