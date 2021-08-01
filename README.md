@@ -32,7 +32,7 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 - [x] Create templates folder for templates organization
 - [x] Create base.html template
 - [x] Create the quizz app
-- [x] Create home.html template and view + test
+- [x] Create home.html (CBV TemplateView) template and view
 - [x] Create users app
 - [x] Create register.html template and view + test
 - [x] Test users models
@@ -42,7 +42,10 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 - [x] Create quizz_list.html template + view + test
 - [x] Create quizz models + test
 - [x] Create quizz_list view (CBV ListView) + template
-- [ ] Create quizz view (CBV DetailView) + template
+- [x] Create quizz view (CBV DetailView) + template
+- [x] Create result view + template
+- [ ] result test
+- [x] Create legal_notice.html (CBV TemplateView) template and view
 
 
 ### Tests 🧪

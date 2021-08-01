@@ -78,3 +78,9 @@ def result(request, pk):
     }
 
     return render(request, "quizz/result.html", context=context)
+
+
+class LegalNoticeView(TemplateView):
+    """CBV that displays the legal notice page"""
+
+    template_name = "quizz/legal_notice.html"
