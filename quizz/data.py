@@ -8,11 +8,8 @@ class DataManager:
     """
 
     def save_movie(self, movie):
-        try:
-            movie.save()
-        except IntegrityError:
-            movie = Movie.objects.get(title=movie)
-        return movie
+        movie_obj = Movie.objects.create(title=movie)
+        return movie_obj
 
     def save_language(self, language):
         try:
@@ -22,22 +19,16 @@ class DataManager:
         return language
 
     def save_question(self, question, quizz):
-        try:
-            question = Question.objects.create(
-                question_content=question,
-                quizz=quizz
-            )
-        except IntegrityError:
-            question = Question.objects.get(question_content=question)
+        question = Question.objects.create(
+            question_content=question,
+            quizz=quizz
+        )
         return question
 
     def save_answers(self, answer_text, question_obj, is_solution):
-        try:
-            answer = Answer.objects.create(
-                answer_content=answer_text,
-                is_correct=is_solution,
-                question=question_obj
-            )
-        except IntegrityError:
-            answer = Answer.objects.get(answer_content=answer_text)
+        answer = Answer.objects.create(
+            answer_content=answer_text,
+            is_correct=is_solution,
+            question=question_obj
+        )
         return answer
