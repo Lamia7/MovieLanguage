@@ -3,7 +3,7 @@ import json
 from django.core.management.base import BaseCommand  # CommandError?
 from django.db.utils import IntegrityError
 
-from quizz.models import Language, Quizz, Movie
+from quizz.models import Language, Quizz
 from quizz.data import DataManager
 
 
@@ -22,8 +22,8 @@ class Command(BaseCommand):
         # Loop into quizzes
         for quizz in data['quizzes']:
             title = quizz['title'].upper()
-            movie_obj = Movie(title=quizz['movie'].upper())
-            movie_obj = dm.save_movie(movie_obj)
+            movie = quizz['movie'].upper()
+            movie_obj = dm.save_movie(movie)
 
             language_obj = Language(name=quizz['language'].capitalize())
             language_obj = dm.save_language(language_obj)
