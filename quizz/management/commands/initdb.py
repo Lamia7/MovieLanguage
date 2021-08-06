@@ -27,25 +27,19 @@ class Command(BaseCommand):
 
             language_obj = Language(name=quizz['language'].capitalize())
             language_obj = dm.save_language(language_obj)
+            # TODO : voir si ok avec:
+            # language = Language(name=quizz['language'].capitalize())
+            # language_obj = dm.save_language(language)
 
+            # TODO : delete question_quantity from model and here
             question_qty = len(quizz['questions'])
 
-            # Instanciate quizz object
-            quizz_obj = Quizz(
-                title=title,
-                movie=movie_obj,
-                language=language_obj,
-                question_quantity=question_qty
+            quizz_obj = dm.save_quizz(
+                title,
+                movie_obj,
+                language_obj,
+                question_qty
             )
-
-            # Saves quizz object
-            try:
-                quizz_obj.save()
-            except ValueError as e:
-                print("Error, unable to save quizz: ", e)
-            except IntegrityError:  # Avoid duplicates
-                # print("Error, unable to save quizz: ", e)
-                quizz_obj = Quizz.objects.get(title=title)
 
             # Loop into question item containing : QUESTIONS, ANSWERS, SOLUTION
             for question_item in quizz['questions']:
