@@ -1,6 +1,6 @@
 from django.db.utils import IntegrityError
 
-from quizz.models import Language, Movie, Question, Answer
+from quizz.models import Language, Movie, Quizz, Question, Answer
 
 
 class DataManager:
@@ -17,6 +17,23 @@ class DataManager:
         except IntegrityError:
             language = Language.objects.get(name=language)
         return language
+
+    def save_quizz(self, title, movie, language, question_qty):
+        # Saves quizz object
+        try:
+            # Instanciate quizz object
+            quizz_obj = Quizz.objects.create(
+                    title=title,
+                    movie=movie,
+                    language=language,
+                    question_quantity=question_qty
+            )
+        except ValueError as e:
+            print("Error, unable to save quizz: ", e)
+        except IntegrityError:  # Avoid duplicates
+            # print("Error, unable to save quizz: ", e)
+            quizz_obj = Quizz.objects.get(title=title)
+        return quizz_obj
 
     def save_question(self, question, quizz):
         question = Question.objects.create(
