@@ -11,7 +11,6 @@ mock_data = {
         {
             "title": "Harry Potter I",
             "movie": "Harry Potter I",
-            "image": "",
             "question_quantity": "",
             "required_score_to_pass": "",
             "language": "english",

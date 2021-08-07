@@ -13,8 +13,7 @@ class ClearDbTestCase(TestCase):
         self.quizz_mock = Quizz.objects.create(
                 title="CAPTAIN FANTASTIC",
                 movie=self.movie_mock,
-                language=self.language_mock,
-                question_quantity=3
+                language=self.language_mock
         )
 
     def test_clear_data_from_database_success(self):

@@ -22,11 +22,6 @@
       {% for quizz in quizz_list %}
       <div class="col-lg-4 col-md-12">
         <div class="card mx-1 my-3 shadow p-3 mb-5 bg-white rounded">
-          <img
-            class="card-img-top"
-            src="{{ quizz.image }}"
-            alt="image du quizz"
-          />
 
           <div class="card-body text-center">
             <a href="{% url 'quizz:quizz' quizz.pk %}" target="_blank">

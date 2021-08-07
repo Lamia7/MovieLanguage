@@ -34,10 +34,6 @@ class Quizz(models.Model):
         null=True,
         related_name="quizz"
     )
-    image = models.ImageField(default="movie.jpg", upload_to='movies')
-    question_quantity = models.IntegerField(
-        verbose_name=_("Nombre de questions")
-    )
     date = models.DateTimeField(auto_now_add=True)
     required_score_to_pass = models.IntegerField(
         help_text="Score minimum attendu (%)",

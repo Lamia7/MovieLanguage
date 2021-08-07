@@ -18,15 +18,14 @@ class DataManager:
             language = Language.objects.get(name=language)
         return language
 
-    def save_quizz(self, title, movie, language, question_qty):
+    def save_quizz(self, title, movie, language):
         # Saves quizz object
         try:
             # Instanciate quizz object
             quizz_obj = Quizz.objects.create(
                     title=title,
                     movie=movie,
-                    language=language,
-                    question_quantity=question_qty
+                    language=language
             )
         except ValueError as e:
             print("Error, unable to save quizz: ", e)
