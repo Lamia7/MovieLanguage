@@ -9,8 +9,6 @@ class ModelsTestCase(TestCase):
         self.quizz_obj = Quizz.objects.create(
             title="Quizz1",
             movie=self.movie_obj,
-            image="",
-            question_quantity=5,
             date="",
             required_score_to_pass=50,
             language=self.language_obj

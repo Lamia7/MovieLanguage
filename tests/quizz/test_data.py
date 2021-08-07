@@ -14,8 +14,7 @@ class DataTestCase(TestCase):
         self.quizz_mock = Quizz.objects.create(
             title="CAPTAIN FANTASTIC",
             movie=self.movie_mock,
-            language=self.language_mock,
-            question_quantity=3)
+            language=self.language_mock)
         self.question_mock = Question.objects.create(
             question_content="How many kids does Ben Cash have ?",
             quizz=self.quizz_mock)
@@ -37,6 +36,20 @@ class DataTestCase(TestCase):
 
     def test_save_language_failed(self):
         pass
+
+    # TODO: Create a test with an expected mock that has
+    # not been saved already
+    # def test_save_quizz_success(self):
+    #     dm = DataManager()
+    #     self.assertEqual(
+    #         dm.save_quizz(
+    #             title="CAPTAIN FANTASTIC",
+    #             movie=self.movie_mock,
+    #             language=self.language_mock,
+    #             question_qty=3
+    #         ),
+    #         self.quizz_mock
+    #     )
 
     def test_save_question_success(self):
         dm = DataManager()

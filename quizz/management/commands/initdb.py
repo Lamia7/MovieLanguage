@@ -1,9 +1,9 @@
 import json
 
 from django.core.management.base import BaseCommand  # CommandError?
-from django.db.utils import IntegrityError
+# from django.db.utils import IntegrityError
 
-from quizz.models import Language, Quizz
+from quizz.models import Language
 from quizz.data import DataManager
 
 
@@ -27,18 +27,11 @@ class Command(BaseCommand):
 
             language_obj = Language(name=quizz['language'].capitalize())
             language_obj = dm.save_language(language_obj)
-            # TODO : voir si ok avec:
-            # language = Language(name=quizz['language'].capitalize())
-            # language_obj = dm.save_language(language)
-
-            # TODO : delete question_quantity from model and here
-            question_qty = len(quizz['questions'])
 
             quizz_obj = dm.save_quizz(
                 title,
                 movie_obj,
-                language_obj,
-                question_qty
+                language_obj
             )
 
             # Loop into question item containing : QUESTIONS, ANSWERS, SOLUTION
