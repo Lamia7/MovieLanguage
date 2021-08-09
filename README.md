@@ -43,6 +43,8 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 - [x] Create quizz models + test
 - [x] Create quizz_list view (CBV ListView) + template
 - [x] Create quizz view (CBV DetailView) + template
+- [x] Create customized command to feed database + test
+- [x] Create customized command to clear database + test
 - [x] Create result view + template
 - [ ] result test
 - [x] Create legal_notice.html (CBV TemplateView) template and view
@@ -66,7 +68,6 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 - HTML5, CSS3
 - Bootstrap 5
 - Bootstrap5 template pack for django-crispy-forms library
-- Pillow library for images
 
 ### Author 📝
 [Lamia EL RALIMI](https://github.com/Lamia7)
