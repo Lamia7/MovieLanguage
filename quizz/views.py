@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic import TemplateView, ListView, DetailView
 
 from quizz.models import Question, Quizz
@@ -16,7 +16,7 @@ class QuizzListView(ListView):
     model = Quizz
     template_name = "quizz/quizz_list.html"
     context_object_name = "quizz_list"
-    # paginate_by = 9
+    # TODO : paginate_by = 9
 
 
 class QuizzDetailView(DetailView):
@@ -34,33 +34,32 @@ class QuizzDetailView(DetailView):
 
 
 def result(request, pk):
+    questions_quantity = Question.objects.filter(quizz=pk).count()
+    total_submitted_answers = 0  # initiate counter
+    total_correct_answers = 0
+
     # Convert request.POST into python dict
     submitted_choices = dict(request.POST)
 
-    # TODO: check if all questions have been answered
-    # 1- count the number of elements in responses
-    # 2- get number of questions in a quizz
-    # 3- compare both results
-    # 4- if same result then continue
-    # 5- if not, redirect to quizz
-    # =================
-
-    # Initiate counter of correct responses
-    correct_answers = 0
-
-    # Get responses into dict_values type
-    values_resp = submitted_choices.values()
+    # Get responses into dict_values type & convert to list
+    values_resp = list(submitted_choices.values())
+    values_resp.pop(0)  # removes csrf token
 
     # Check if user passes quizz
     for element in values_resp:
+        total_submitted_answers += 1
         # Get first element of each values_resp list
         answer_string = element[0]
         if answer_string.__contains__("CORRECT: True"):
-            correct_answers += 1
+            total_correct_answers += 1
+
+    # Check if all questions have been replied
+    if total_submitted_answers != questions_quantity:
+        # TODO: Add a message to inform user all answers have not been replied
+        return redirect('quizz:quizz', pk)
 
     # Calculate result
-    questions_quantity = Question.objects.filter(quizz=pk).count()
-    result = int((correct_answers / questions_quantity) * 100)
+    result = int((total_correct_answers / questions_quantity) * 100)
     quizz_title = Quizz.objects.get(pk=pk).title
 
     if result >= 50:  # If 50% user passes
