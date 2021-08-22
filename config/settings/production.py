@@ -17,7 +17,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", default="foo-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # False if ENV=prod, by default, ENV=development (True)
-#DEBUG = False if ENV == "production" else True
+# DEBUG = False if ENV == "production" else True
 DEBUG = False
 
 DATABASES = {
