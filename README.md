@@ -73,5 +73,9 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 - Bootstrap 5
 - Bootstrap5 template pack for django-crispy-forms library
 
+***EXTERNAL RESSOURCES***
+- Web server /  HTTP server : [Nginx](https://www.nginx.com/)
+- HTTP/WSGI server : [Gunicorn](https://gunicorn.org/)
+
 ### Author 📝
 [Lamia EL RALIMI](https://github.com/Lamia7)
