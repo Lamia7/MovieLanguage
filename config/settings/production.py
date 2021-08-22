@@ -1,7 +1,12 @@
 import os
 
+from dotenv import load_dotenv, find_dotenv
+
 from .base import *  # noqa: F401, F403
 
+
+# Find .env file
+load_dotenv(find_dotenv())
 
 # ENV as development by default, check .env file if production
 ENV = os.getenv("ENV")
@@ -25,3 +30,6 @@ DATABASES = {
         "PORT": os.getenv("PORT", default=""),
     }
 }
+
+# Static files path for deployment
+STATIC_ROOT = BASE_DIR / "staticfiles"

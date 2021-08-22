@@ -10,7 +10,6 @@ GITHUB_WORKFLOW = os.environ.get("GITHUB_WORKFLOW")
 # ENV as development by default, check .env file if production
 ENV = os.getenv("ENV")
 
-#ALLOWED_HOSTS = ["*"]
 
 # load_dotenv(find_dotenv(filename=".env-local")) ?
 
