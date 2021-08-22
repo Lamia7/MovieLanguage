@@ -1,7 +1,7 @@
 # 🎞️ MovieLanguage
 (Openclassrooms) Project 13 : Create a project from scratch, to use the acquired knowledge on an opened subject.
 
-This app contains quizzes about movies and series to improve your English.
+This app contains quizzes about movies to improve your English.
 
 ### Installation and configuration 💻
 - Create and activate virtual environment : `pipenv shell`
@@ -23,7 +23,11 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 (To deactivate the virtual environment, run this command: `exit`)
 
 ### Features 📋
-+ 
++ Authentication
++ Display list of available quizzes
++ Choose a quizz
++ Reply to the questions
++ Display the result after you submit your answers
 
 ### Checklist 📝
 - [x] Download postgreSQL, added django + psycopg2-binary + libpq-dev
@@ -62,7 +66,7 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 - Framework : Django 3.2
 
 ***DATABASE***
-- ...
+- PostgreSQL
 
 ***FRONT***
 - HTML5, CSS3
