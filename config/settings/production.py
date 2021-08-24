@@ -1,19 +1,22 @@
 import os
 
-from dotenv import load_dotenv, find_dotenv
+from dotenv.main import find_dotenv
+
+# from dotenv import load_dotenv, find_dotenv
 
 from .base import *  # noqa: F401, F403
 
 
 # Find .env file
-load_dotenv(find_dotenv())
+# load_dotenv(find_dotenv())
+find_dotenv()
 
 # ENV as development by default, check .env file if production
 ENV = os.getenv("ENV")
 
 ALLOWED_HOSTS = ["142.93.35.59"]
 
-SECRET_KEY = os.getenv("SECRET_KEY", default="foo-key")
+# SECRET_KEY = os.getenv("SECRET_KEY", default="foo-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # False if ENV=prod, by default, ENV=development (True)
