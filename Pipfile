@@ -13,6 +13,7 @@ psycopg2-binary = "*"
 Pillow = "*"
 django-extensions = "*"
 gunicorn = "*"
+sentry-sdk = "*"
 
 [dev-packages]
 
