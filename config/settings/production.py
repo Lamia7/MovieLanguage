@@ -1,8 +1,10 @@
 import os
 
 from dotenv.main import find_dotenv
-
 # from dotenv import load_dotenv, find_dotenv
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
 
 from .base import *  # noqa: F401, F403
 
@@ -36,3 +38,24 @@ DATABASES = {
 
 # Static files path for deployment
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Sentry configuration
+sentry_sdk.init(
+    dsn="https://fd036ed83aec4c1d8d85d5129bb76c37@o592289.ingest.sentry.io/5740647",
+    integrations=[DjangoIntegration()],
+
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production,
+    traces_sample_rate=1.0,
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True,
+
+    # By default the SDK will try to use the SENTRY_RELEASE
+    # environment variable, or infer a git commit
+    # SHA as release, however you may want to set
+    # something more human-readable.
+    # release="myapp@1.0.0",
+)
