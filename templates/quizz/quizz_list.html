@@ -21,11 +21,11 @@
       {% if quizz_list %}
       {% for quizz in quizz_list %}
       <div class="col-lg-4 col-md-12">
-        <div class="card mx-1 my-3 shadow p-3 mb-5 bg-white rounded">
+        <div class="card mx-1 my-3 shadow p-3 mb-5 rounded quizz-card">
 
           <div class="card-body text-center">
-            <a href="{% url 'quizz:quizz' quizz.pk %}" target="_blank">
-              <p class="card-title">{{ quizz.title }}</p>
+            <a class="quizz-link" href="{% url 'quizz:quizz' quizz.pk %}" target="_blank">
+              <p class="card-title quizz-title">{{ quizz.title }}</p>
             </a>
           </div>
         </div>
