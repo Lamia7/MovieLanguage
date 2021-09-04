@@ -8,6 +8,8 @@ class TestUsersViews(TestCase):
     def setUp(self):
         self.register_url = reverse("users:register")
         self.account_url = reverse("users:account")
+        self.password_reset_url = reverse("users:password_reset")
+        self.password_reset_done_url = reverse("users:password_reset_done")
 
     # Unit test
     def test_display_register_page(self):
@@ -56,3 +58,16 @@ class TestUsersViews(TestCase):
         response = self.client.get(self.account_url)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "users/account.html")
+
+    def test_password_reset_page(self):
+        # check that reverse the password_reset template
+        response = self.client.get(self.password_reset_url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "users/password_reset.html")
+
+    def test_password_reset_done_page(self):
+        response = self.client.get(self.password_reset_done_url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "users/password_reset_done.html")
