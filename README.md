@@ -49,30 +49,18 @@ SENTRY="your_dsn"
 ```
 <hr>
 
-### Checklist 📝
-- [x] Download postgreSQL, added django + psycopg2-binary + libpq-dev
-- [x] Initialize django project
-- [x] Modify default settings
-- [x] Create templates folder for templates organization
-- [x] Create base.html template
-- [x] Create the quizz app
-- [x] Create home.html (CBV TemplateView) template and view
-- [x] Create users app
-- [x] Create register.html template and view + test
-- [x] Test users models
-- [x] Create login.html template with Django CBV
-- [x] Create account.html template + view + test
-- [x] Create logout.html template with Django CBV
-- [x] Create quizz_list.html template + view + test
-- [x] Create quizz models + test
-- [x] Create quizz_list view (CBV ListView) + template
-- [x] Create quizz view (CBV DetailView) + template
-- [x] Create customized command to feed database + test
-- [x] Create customized command to clear database + test
-- [x] Create result view + template
-- [ ] result test
-- [x] Create legal_notice.html (CBV TemplateView) template and view
-- [ ] Create password reset feature (views, templates and tests)
+### Manage static directory 🖌️
+``npm run build`` builds the project - this builds assets, HTML, JS, and CSS into dist\
+``npm start`` or npm run start runs the project, launches a live preview in your default browser, and watches for changes made to files in src \
+``npm run build:scss`` compiles the SCSS files located in the src/scss/ directory into dist \
+``npm run build:assets`` copies the files in the src/assets/ directory into dist \
+``npm run build:pug`` compiles the Pug located in the src/pug/ directory into dist \
+``npm run build:scripts`` brings the src/js/scripts.js file into dist \
+``npm run clean`` deletes the dist directory to prepare for rebuilding the project \
+``npm run start:debug`` runs the project in debug mode
+
+
+
 <hr>
 
 ## Tests 🧪
