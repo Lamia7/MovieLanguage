@@ -131,3 +131,11 @@ LOGIN_REDIRECT_URL = 'users:account'
 redirects to the login page, then to the page they tried to access to
 (@decorators in views)"""
 LOGIN_URL = 'users:login'
+
+# Email server (Gmail) for password reset
+EMAL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv("EMAIL_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
