@@ -44,6 +44,8 @@
         <li class="sidebar-nav-item"><a href="{% url 'quizz:home' %}#about">À propos</a></li>
         <li class="sidebar-nav-item"><a href="{% url 'quizz:home' %}#services">Objectifs</a></li>
         <li class="sidebar-nav-item"><a href="{% url 'quizz:home' %}#footer">Contact</a></li>
+        <li class="sidebar-nav-item"><a href="{% url 'quizz:quizz_list' %}">Liste des quizz</a></li>
+        <li class="sidebar-nav-item"><a href="{% url 'quizz:legal_notice' %}">Mentions Légales</a></li>
         {% if user.is_authenticated %}
           <li class="sidebar-nav-item"><a href="{% url 'users:account' %}">Mon compte</a></li>
           <li class="sidebar-nav-item"><a href="{% url 'users:logout' %}">Se déconnecter</a></li>
