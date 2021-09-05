@@ -14,3 +14,9 @@ a.quizz-link {
     text-decoration: none;
     font-weight: bold;
 }
+
+@media (min-width: 992px) {
+    .main-section {
+     height: 55%;
+    }
+ }

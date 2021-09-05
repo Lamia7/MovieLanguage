@@ -11142,6 +11142,11 @@ a.quizz-link {
   font-weight: bold;
 }
 
+@media (min-width: 992px) {
+  .main-section {
+    height: 55%;
+  }
+}
 section#authentication {
   padding-top: 2rem;
   height: 55%;
