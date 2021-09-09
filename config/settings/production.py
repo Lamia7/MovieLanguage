@@ -16,7 +16,7 @@ find_dotenv()
 # ENV as development by default, check .env file if production
 ENV = os.getenv("ENV")
 
-ALLOWED_HOSTS = ["142.93.35.59"]
+ALLOWED_HOSTS = ["142.93.35.59", "movielanguage.lamiaweb.fr"]
 
 # SECRET_KEY = os.getenv("SECRET_KEY", default="foo-key")
 
